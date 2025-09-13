@@ -152,29 +152,29 @@ def main():
 
     nfiles = len(files)
 
-    def process_file(idx_file):
-        i, file = idx_file
-        print(f"Processing file {i+1}/{nfiles}: {file}")
-        #os.system("git checkout " + file)
-        transform_file(file)
-
-        # Sanity check: run nixfmt on the file and see that it doesn't fail; if it does, git checkout - we'll address it later
-        try:
-            subprocess.run(["nixfmt", file], check=True)
-        except subprocess.CalledProcessError:
-            print(f"nix fmt failed on {file}, reverting changes")
-            subprocess.run(["git", "checkout", file])
-
     # Use all available CPU cores for parallel processing
     max_workers = multiprocessing.cpu_count()
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         batch = list(enumerate(files))
-        futures = [executor.submit(process_file, idx_file) for idx_file in batch]
+        futures = [executor.submit(process_file, idx_file, nfiles) for idx_file in batch]
         for future in as_completed(futures):
             future.result()
 
     # Finally, reformat everything with nix fmt just in case
     os.system("nix fmt")
+
+def process_file(idx_file, nfiles):
+    i, file = idx_file
+    print(f"Processing file {i+1}/{nfiles}: {file}")
+    #os.system("git checkout " + file)
+    transform_file(file)
+
+    # Sanity check: run nixfmt on the file and see that it doesn't fail; if it does, git checkout - we'll address it later
+    try:
+        subprocess.run(["nixfmt", file], check=True)
+    except subprocess.CalledProcessError:
+        print(f"nix fmt failed on {file}, reverting changes")
+        subprocess.run(["git", "checkout", file])
 
 if __name__ == "__main__":
     main()
