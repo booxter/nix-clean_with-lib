@@ -4,8 +4,10 @@
 import argparse
 import re
 import os
+import subprocess
+import multiprocessing
 from typing import Callable
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, as_completed
 
 
 FILES_TO_IGNORE = [
@@ -157,19 +159,19 @@ def main():
         transform_file(file)
 
         # Sanity check: run nixfmt on the file and see that it doesn't fail; if it does, git checkout - we'll address it later
-        ret = os.system("nixfmt " + file)
-        if ret != 0:
+        try:
+            subprocess.run(["nixfmt", file], check=True)
+        except subprocess.CalledProcessError:
             print(f"nix fmt failed on {file}, reverting changes")
-            os.system("git checkout " + file)
+            subprocess.run(["git", "checkout", file])
 
-    # Process files in batches of 10 in parallel
-    batch_size = 10
-    for batch_start in range(0, nfiles, batch_size):
-        batch = list(enumerate(files[batch_start:batch_start+batch_size], start=batch_start))
-        with ThreadPoolExecutor(max_workers=batch_size) as executor:
-            futures = [executor.submit(process_file, idx_file) for idx_file in batch]
-            for future in as_completed(futures):
-                future.result()
+    # Use all available CPU cores for parallel processing
+    max_workers = multiprocessing.cpu_count()
+    with ProcessPoolExecutor(max_workers=max_workers) as executor:
+        batch = list(enumerate(files))
+        futures = [executor.submit(process_file, idx_file) for idx_file in batch]
+        for future in as_completed(futures):
+            future.result()
 
     # Finally, reformat everything with nix fmt just in case
     os.system("nix fmt")
