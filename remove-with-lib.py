@@ -5,6 +5,7 @@ import argparse
 import re
 import os
 from typing import Callable
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 FILES_TO_IGNORE = [
@@ -148,7 +149,9 @@ def main():
     files = [f for f in files if f not in FILES_TO_IGNORE]
 
     nfiles = len(files)
-    for i, file in enumerate(files):
+
+    def process_file(idx_file):
+        i, file = idx_file
         print(f"Processing file {i+1}/{nfiles}: {file}")
         #os.system("git checkout " + file)
         transform_file(file)
@@ -158,6 +161,15 @@ def main():
         if ret != 0:
             print(f"nix fmt failed on {file}, reverting changes")
             os.system("git checkout " + file)
+
+    # Process files in batches of 10 in parallel
+    batch_size = 10
+    for batch_start in range(0, nfiles, batch_size):
+        batch = list(enumerate(files[batch_start:batch_start+batch_size], start=batch_start))
+        with ThreadPoolExecutor(max_workers=batch_size) as executor:
+            futures = [executor.submit(process_file, idx_file) for idx_file in batch]
+            for future in as_completed(futures):
+                future.result()
 
     # Finally, reformat everything with nix fmt just in case
     os.system("nix fmt")
