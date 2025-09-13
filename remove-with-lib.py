@@ -29,6 +29,9 @@ FILES_TO_IGNORE = [
 
     # some code in attrs
     "pkgs/development/python-modules/setuptools/default.nix",
+    "pkgs/development/web/nodejs/nodejs.nix",
+    "pkgs/development/python-modules/markupsafe/default.nix",
+    "pkgs/by-name/li/libdrm/package.nix",
 ];
 
 
