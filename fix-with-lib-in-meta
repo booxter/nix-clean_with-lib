@@ -12,8 +12,19 @@ fi
 BEFORE=before.json
 AFTER=after.json
 
+echo "Nixpkgs dir: $NIXPKGS_DIR"
+
+BEFORE_COMMIT=$(git -C $NIXPKGS_DIR rev-parse HEAD)
+echo "Nixpkgs commit: ${BEFORE_COMMIT}"
+
 nix-env -f $NIXPKGS_DIR -qa --json --meta --show-trace > $BEFORE
 ./remove-with-lib.py $NIXPKGS_DIR/pkgs
 nix-env -f $NIXPKGS_DIR -qa --json --meta --show-trace > $AFTER
 
 diff -u $BEFORE $AFTER
+
+echo "Committing changes..."
+git -C $NIXPKGS_DIR add .
+git -C $NIXPKGS_DIR commit -m "various: clean up 'meta = with lib; { ... }'" \
+    -m "This commit was generated using:" \
+    -m "github.com:booxter/nix-clean_with-lib/fix-with-lib-in-meta@$(git rev-parse --short HEAD)"
