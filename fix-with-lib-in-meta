@@ -21,7 +21,8 @@ nix-env -f $NIXPKGS_DIR -qa --json --meta --show-trace > $BEFORE
 ./remove-with-lib.py $NIXPKGS_DIR/pkgs
 nix-env -f $NIXPKGS_DIR -qa --json --meta --show-trace > $AFTER
 
-diff -u $BEFORE $AFTER
+# informational diff - don't expect changes beyond positional markers
+diff -u $BEFORE $AFTER || true
 
 echo "Committing changes..."
 git -C $NIXPKGS_DIR add .
