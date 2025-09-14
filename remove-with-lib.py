@@ -225,6 +225,9 @@ FILES_TO_IGNORE = [
     "pkgs/development/compilers/factor-lang/factor99.nix",
     "pkgs/by-name/ro/root/tests/test-thisroot.nix",
 
+    # avoid spurious rebuild
+    "pkgs/tools/misc/anystyle-cli/default.nix",
+
     # pkgs.lib
     "pkgs/development/python-modules/azure-mgmt-common/default.nix",
     "pkgs/development/python-modules/azure-mgmt-core/default.nix",
