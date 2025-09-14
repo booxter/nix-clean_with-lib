@@ -221,6 +221,9 @@ FILES_TO_IGNORE = [
     "pkgs/os-specific/bsd/freebsd/pkgs/drm-kmod-firmware.nix",
     "pkgs/by-name/io/iozone/package.nix",
     "pkgs/development/r-modules/default.nix",
+    "pkgs/os-specific/bsd/freebsd/pkgs/libspl.nix",
+    "pkgs/development/compilers/factor-lang/factor99.nix",
+    "pkgs/by-name/ro/root/tests/test-thisroot.nix",
 
     # pkgs.lib
     "pkgs/development/python-modules/azure-mgmt-common/default.nix",
@@ -250,6 +253,7 @@ FILES_TO_IGNORE = [
     "pkgs/development/python-modules/sphinx-version-warning/default.nix",
     "pkgs/development/libraries/quarto/default.nix",
     "pkgs/desktops/xfce/applications/xfmpc/default.nix",
+    "pkgs/development/python-modules/textx/tests.nix",
 ];
 
 
