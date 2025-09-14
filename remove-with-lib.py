@@ -345,6 +345,9 @@ def transform_file(file_path):
     with open(file_path, "r") as f:
         content = f.read()
 
+    if "meta = with lib;" not in content:
+        return False
+
     for rule in RULES:
         if isinstance(rule, Callable):
             content = rule(content)
@@ -353,6 +356,8 @@ def transform_file(file_path):
 
     with open(file_path, "w") as f:
         f.write(content)
+
+    return True
 
 
 def get_files(file_path):
@@ -391,7 +396,9 @@ def process_file(idx_file, nfiles):
     i, file = idx_file
     print(f"Processing file {i+1}/{nfiles}: {file}")
     #os.system("git checkout " + file)
-    transform_file(file)
+
+    if not transform_file(file):
+        return
 
     # Sanity check: run nixfmt on the file and see that it doesn't fail; if it does, git checkout - we'll address it later
     try:
