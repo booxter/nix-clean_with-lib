@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+NIXPKGS_DIR=${1:-}
+
+if [[ -z "$NIXPKGS_DIR" ]]; then
+    echo "Usage: $0 <nixpkgs-dir>"
+    exit 1
+fi
+
+BEFORE=before.json
+AFTER=after.json
+
+nix-env -f $NIXPKGS_DIR -qa --json --meta --show-trace > $BEFORE
+./remove-with-lib.py $NIXPKGS_DIR/pkgs
+nix-env -f $NIXPKGS_DIR -qa --json --meta --show-trace > $AFTER
+
+diff -u $BEFORE $AFTER

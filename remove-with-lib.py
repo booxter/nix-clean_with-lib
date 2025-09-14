@@ -35,6 +35,214 @@ FILES_TO_IGNORE = [
     "pkgs/development/web/nodejs/nodejs.nix",
     "pkgs/development/python-modules/markupsafe/default.nix",
     "pkgs/by-name/li/libdrm/package.nix",
+    "pkgs/stdenv/generic/check-meta.nix",
+    "pkgs/development/libraries/science/math/openblas/default.nix",
+    "pkgs/by-name/aa/aapt/package.nix",
+    "pkgs/development/embedded/arduino/arduino-core/default.nix",
+    "pkgs/development/python-modules/cryptography/default.nix",
+    "pkgs/tools/typesetting/tex/texlive/tlpdb-overrides.nix",
+    "pkgs/development/libraries/botan/default.nix",
+    "pkgs/by-name/ap/apple-cursor/package.nix",
+    "pkgs/development/compilers/ccl/default.nix",
+    "pkgs/development/tools/electron/common.nix",
+    "pkgs/development/python-modules/dtschema/default.nix",
+    "pkgs/by-name/ba/babl/package.nix",
+    "pkgs/by-name/bu/burpsuite/package.nix",
+    "pkgs/by-name/co/comixcursors/package.nix",
+    "pkgs/by-name/cl/clickhouse/generic.nix",
+    "pkgs/applications/networking/remote/citrix-workspace/generic.nix",
+    "pkgs/by-name/dm/dmtcp/package.nix",
+    "pkgs/by-name/ff/fftw/package.nix",
+    "pkgs/os-specific/linux/gasket/default.nix",
+    "pkgs/development/libraries/libva/default.nix",
+    "pkgs/desktops/gnome/extensions/clock-override/default.nix",
+    "pkgs/tools/misc/logstash/7.x.nix",
+    "pkgs/by-name/gi/giac/package.nix",
+    "pkgs/by-name/gl/glide-media-player/package.nix",
+    "pkgs/tools/package-management/nix/common-meson.nix",
+    "pkgs/by-name/gr/grass-sass/package.nix",
+    "pkgs/by-name/gv/gvfs/package.nix",
+    "pkgs/servers/monitoring/grafana/plugins/grafana-clickhouse-datasource/default.nix",
+    "pkgs/by-name/hp/hp2p/package.nix",
+    "pkgs/by-name/is/isa-l/package.nix",
+    "pkgs/by-name/jo/john/package.nix",
+    "pkgs/by-name/lt/lttng-ust_2_12/package.nix",
+    "pkgs/by-name/lu/luau-lsp/package.nix",
+    "pkgs/development/compilers/mozart/binary.nix",
+    "pkgs/by-name/mu/mullvad-browser/package.nix",
+    "pkgs/by-name/nr/nrf-command-line-tools/package.nix",
+    "pkgs/development/ocaml-modules/ocaml-freestanding/default.nix",
+    "pkgs/by-name/oc/ocis_5-bin/package.nix",
+    "pkgs/by-name/pg/pgbouncer/package.nix",
+    "pkgs/by-name/po/polkadot/package.nix",
+    "pkgs/development/python-modules/deepwave/default.nix",
+    "pkgs/development/python-modules/impacket/default.nix",
+    "pkgs/development/python-modules/pycurl/default.nix",
+    "pkgs/by-name/ti/tiny-cuda-nn/package.nix",
+    "pkgs/by-name/sa/saleae-logic/package.nix",
+    "pkgs/development/compilers/sbcl/default.nix",
+    "pkgs/by-name/si/simde/package.nix",
+    "pkgs/by-name/si/singular/package.nix",
+    "pkgs/by-name/sl/slimserver/package.nix",
+    "pkgs/by-name/so/solo5/package.nix",
+    "pkgs/by-name/so/sox/package.nix",
+    "pkgs/by-name/st/string-machine/package.nix",
+    "pkgs/by-name/ta/tabnine/package.nix",
+    "pkgs/by-name/te/tela-icon-theme/package.nix",
+    "pkgs/by-name/ut/ut1999/package.nix",
+    "pkgs/by-name/wa/wayfarer/package.nix",
+    "pkgs/by-name/we/webrtc-audio-processing_0_3/package.nix",
+    "pkgs/by-name/we/webrtc-audio-processing_1/package.nix",
+    "pkgs/by-name/wi/wiredtiger/package.nix",
+    "pkgs/by-name/wi/wireguard-vanity-keygen/package.nix",
+    "pkgs/by-name/wl/wlr-layout-ui/package.nix",
+    "pkgs/desktops/xfce/core/thunar/wrapper.nix",
+    "pkgs/by-name/yo/yourkit-java/package.nix",
+    "pkgs/by-name/ze/zeroad-unwrapped/package.nix",
+    "pkgs/by-name/fa/fasmg/package.nix",
+    "pkgs/development/compilers/ghc/9.0.2-binary.nix",
+    "pkgs/development/compilers/ghc/9.2.4-binary.nix",
+    "pkgs/development/interpreters/python/cpython/default.nix",
+    "pkgs/development/libraries/qt-5/modules/qtwebengine.nix",
+    "pkgs/servers/web-apps/wordpress/packages/default.nix",
+    "pkgs/by-name/xd/xdgmenumaker/package.nix",
+
+    # other
+    "pkgs/development/interpreters/acl2/default.nix",
+    "pkgs/by-name/ad/adns/package.nix",
+    "pkgs/by-name/ae/aeron/package.nix",
+    "pkgs/by-name/ae/aeron-cpp/package.nix",
+    "pkgs/misc/arm-trusted-firmware/default.nix",
+    "pkgs/by-name/ap/apkg/package.nix",
+    "pkgs/os-specific/darwin/apple-source-releases/patch_cmds/package.nix",
+    "pkgs/by-name/aw/aws-lc/package.nix",
+    "pkgs/os-specific/darwin/xcode/default.nix",
+    "pkgs/development/python-modules/breezy/default.nix",
+    "pkgs/development/cuda-modules/generic-builders/manifest.nix",
+    "pkgs/tools/misc/grub/default.nix",
+    "pkgs/development/tools/electron/binary/generic.nix",
+    "pkgs/development/libraries/ffmpeg/generic.nix",
+    "pkgs/development/interpreters/luajit/default.nix",
+    "pkgs/tools/networking/networkmanager/default.nix",
+    "pkgs/development/libraries/glew/default.nix",
+    "pkgs/by-name/co/committed/package.nix",
+    "pkgs/by-name/cs/csharp-ls/package.nix",
+    "pkgs/by-name/dc/dconf/package.nix",
+    "pkgs/by-name/do/dolphin-emu/package.nix",
+    "pkgs/development/compilers/go/1.25.nix",
+    "pkgs/development/compilers/go/1.24.nix",
+    "pkgs/development/em-modules/generic/default.nix",
+    "pkgs/development/tools/haskell/dconf2nix/default.nix",
+    "pkgs/tools/system/netdata/default.nix",
+    "pkgs/development/compilers/zulu/common.nix",
+    "pkgs/by-name/gn/gnome-keyring/package.nix",
+    "pkgs/by-name/fr/frr/package.nix",
+    "pkgs/by-name/gl/glib-networking/package.nix",
+    "pkgs/development/libraries/libinput/default.nix",
+    "pkgs/development/libraries/gstreamer/bad/default.nix",
+    "pkgs/development/libraries/gstreamer/ugly/default.nix",
+    "pkgs/by-name/gl/glucose/package.nix",
+    "pkgs/by-name/jo/joypixels/package.nix",
+    "pkgs/by-name/li/libwacom/package.nix",
+    "pkgs/by-name/po/polkit/package.nix",
+    "pkgs/servers/dns/knot-resolver/default.nix",
+    "pkgs/by-name/li/libcamera/package.nix",
+    "pkgs/by-name/li/libgpiod/package.nix",
+    "pkgs/by-name/li/libpciaccess/package.nix",
+    "pkgs/by-name/li/libproxy/package.nix",
+    "pkgs/by-name/li/libsystemtap/package.nix",
+    "pkgs/by-name/li/libvgm/package.nix",
+    "pkgs/applications/radio/limesuite/default.nix",
+    "pkgs/development/libraries/mbedtls/generic.nix",
+    "pkgs/by-name/mi/millet/package.nix",
+    "pkgs/by-name/mo/monosat/package.nix",
+    "pkgs/by-name/mu/munge/package.nix",
+    "pkgs/by-name/ne/neko/package.nix",
+    "pkgs/by-name/no/nofi/package.nix",
+    "pkgs/by-name/ns/nsh/package.nix",
+    "pkgs/by-name/op/openrw/package.nix",
+    "pkgs/by-name/op/opensmt/package.nix",
+    "pkgs/by-name/op/opensplat/package.nix",
+    "pkgs/by-name/p1/p11-kit/package.nix",
+    "pkgs/tools/archivers/p7zip/default.nix",
+    "pkgs/applications/networking/browsers/palemoon/bin.nix",
+    "pkgs/by-name/pa/passt/package.nix",
+    "pkgs/by-name/pd/pdns-recursor/package.nix",
+    "pkgs/applications/misc/pe-bear/default.nix",
+    "pkgs/by-name/pe/peergos/package.nix",
+    "pkgs/development/compilers/polyml/5.6.nix",
+    "pkgs/by-name/ti/tinyxxd/package.nix",
+    "pkgs/by-name/qb/qbittorrent-cli/package.nix",
+    "pkgs/by-name/sa/sauerbraten/package.nix",
+    "pkgs/development/lisp-modules/packages.nix",
+    "pkgs/by-name/sf/sfml_2/package.nix",
+    "pkgs/applications/science/machine-learning/shogun/default.nix",
+    "pkgs/by-name/sp/splitcode/package.nix",
+    "pkgs/by-name/sq/sqlpkg-cli/package.nix",
+    "pkgs/by-name/sq/squeezelite/package.nix",
+    "pkgs/by-name/su/superlu/package.nix",
+    "pkgs/by-name/su/supersonic/package.nix",
+    "pkgs/by-name/ta/tacent/package.nix",
+    "pkgs/by-name/ta/tahoe-lafs/package.nix",
+    "pkgs/by-name/te/tetrio-plus/package.nix",
+    "pkgs/by-name/th/thepeg/package.nix",
+    "pkgs/by-name/tr/tracy/package.nix",
+    "pkgs/by-name/ve/verapdf/package.nix",
+    "pkgs/by-name/vg/vgmstream/package.nix",
+    "pkgs/by-name/vp/vpnc/package.nix",
+    "pkgs/applications/misc/ape/default.nix",
+    "pkgs/by-name/bu/bulk_extractor/package.nix",
+    "pkgs/by-name/bu/bun/package.nix",
+    "pkgs/development/haskell-modules/configuration-nix.nix",
+    "pkgs/games/crawl/default.nix",
+    "pkgs/development/libraries/db/generic.nix",
+    "pkgs/applications/audio/dfasma/default.nix",
+    "pkgs/desktops/enlightenment/efl/default.nix",
+    "pkgs/by-name/hu/hunspell/dictionaries.nix",
+    "pkgs/by-name/je/jed/package.nix",
+    "pkgs/by-name/ne/netbird/package.nix",
+    "pkgs/by-name/nv/nvpy/package.nix",
+    "pkgs/applications/video/obs-studio/plugins/obs-ndi/default.nix",
+    "pkgs/by-name/op/opensoldat/package.nix",
+    "pkgs/by-name/pe/penpot-desktop/package.nix",
+    "pkgs/development/python-modules/gurobipy/default.nix",
+    "pkgs/by-name/re/redeclipse/package.nix",
+    "pkgs/development/compilers/scala/2.x.nix",
+    "pkgs/by-name/tr/trrntzip/package.nix",
+    "pkgs/by-name/ve/vectorscan/package.nix",
+    "pkgs/build-support/go/module.nix",
+    "pkgs/by-name/ya/yazi/plugins/default.nix",
+    "pkgs/by-name/ne/netflix/package.nix",
+    "pkgs/development/libraries/kde-frameworks/default.nix",
+
+    # pkgs.lib
+    "pkgs/development/python-modules/azure-mgmt-common/default.nix",
+    "pkgs/development/python-modules/azure-mgmt-core/default.nix",
+    "pkgs/development/python-modules/azure-mgmt-nspkg/default.nix",
+    "pkgs/development/python-modules/django-leaflet/default.nix",
+    "pkgs/development/python-modules/dopy/default.nix",
+    "pkgs/development/python-modules/escapism/default.nix",
+    "pkgs/development/python-modules/facebook-sdk/default.nix",
+    "pkgs/development/python-modules/opcua-widgets/default.nix",
+
+    # maintainers = teams
+    "pkgs/applications/video/kodi/addons/bluetooth-manager/default.nix",
+
+    # platforms = system...
+    "pkgs/by-name/tc/tcb/package.nix",
+
+    # wrong attrs used?
+    "pkgs/servers/home-assistant/custom-lovelace-modules/custom-sidebar/package.nix",
+    "pkgs/by-name/ma/maphosts/package.nix",
+    "pkgs/by-name/me/mercurial/package.nix",
+    "pkgs/by-name/pg/pgf2/package.nix",
+    "pkgs/by-name/pg/pgf3/package.nix",
+    "pkgs/development/python-modules/flask/default.nix",
+    "pkgs/development/python-modules/motmetrics/default.nix",
+    "pkgs/development/python-modules/scikit-learn/default.nix",
+    "pkgs/development/python-modules/sphinx-version-warning/default.nix",
+    "pkgs/development/libraries/quarto/default.nix",
+    "pkgs/desktops/xfce/applications/xfmpc/default.nix",
 ];
 
 
@@ -53,7 +261,7 @@ def list_or_value(key, lib_key=None):
         if f"{lib_key}." not in content and f"{lib_key}s." not in content:
             return content
 
-        pattern = rf"({key}\s*=\s*)(\[[^\]]*\]|[^;]+)(;)"
+        pattern = rf"\s({key}\s*=\s*)(\[[^\]]*\]|[^;]+)(;)"
         matches = re.finditer(pattern, content)
 
         for match in matches:
@@ -61,6 +269,10 @@ def list_or_value(key, lib_key=None):
             prefix = match.group(1)
             value = match.group(2)
             suffix = match.group(3)
+
+            if " if " in value or value.startswith("if "):
+                # Skip any conditional expressions for now
+                continue
 
             if value.startswith("[") and value.endswith("]"):
                 # It's a list
@@ -87,7 +299,7 @@ def list_or_value(key, lib_key=None):
                 new_value = " ".join(new_parts)
             else:
                 # It's a single value
-                if value.startswith("lib.") or value.startswith('"') or value.startswith("'"):
+                if value.strip().startswith("lib.") or value.startswith('"') or value.startswith("'") or value.startswith("with ") or value.startswith("if ") or value.startswith("{") or value.startswith("["):
                     new_value = value
                 else:
                     new_value = f"lib.{value}"
@@ -104,13 +316,21 @@ RULES = [
     (r"meta = with lib; ", "meta = "),
     (r"maintainers = with maintainers; ", "maintainers = with lib.maintainers; "),
     (r"platforms = with platforms; ", "platforms = with lib.platforms; "),
+    (r"hydraPlatforms = with platforms; ", "hydraPlatforms = with lib.platforms; "),
     (r"license = with licenses; ", "license = with lib.licenses; "),
     (r"sourceProvenance = with sourceTypes; ", "sourceProvenance = with lib.sourceTypes; "),
+    (r"teams = with teams; ", "teams = with lib.teams; "),
     list_or_value("platforms"),
     list_or_value("badPlatforms", "platforms"),
+    list_or_value("hydraPlatforms", "platforms"),
     list_or_value("maintainers"),
     list_or_value("license"),
     list_or_value("teams"),
+    (r" sourceTypes.binaryBytecode", " lib.sourceTypes.binaryBytecode"),
+    (r" sourceTypes.binaryNativeCode", " lib.sourceTypes.binaryNativeCode"),
+    (r" sourceTypes.fromSource", " lib.sourceTypes.fromSource"),
+    (r"broken = versionOlder ", "broken = lib.versionOlder "),
+    (r"broken = versionAtLeast ", "broken = lib.versionAtLeast "),
 ]
 
 
@@ -148,7 +368,7 @@ def main():
     args = parser.parse_args()
 
     files = get_files(args.file)
-    files = [f for f in files if f not in FILES_TO_IGNORE]
+    files = [f for f in files if not any(f.endswith(ignored) for ignored in FILES_TO_IGNORE)]
 
     nfiles = len(files)
 
