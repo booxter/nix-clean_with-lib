@@ -380,9 +380,6 @@ def main():
         for future in as_completed(futures):
             future.result()
 
-    # Finally, reformat everything with nix fmt just in case
-    os.system("nix fmt")
-
 def process_file(idx_file, nfiles):
     i, file = idx_file
     print(f"Processing file {i+1}/{nfiles}: {file}")

@@ -24,6 +24,11 @@ nix-env -f $NIXPKGS_DIR -qa --json --meta --show-trace > $AFTER
 # informational diff - don't expect changes beyond positional markers
 diff -u $BEFORE $AFTER || true
 
+# format before committing
+pushd $NIXPKGS_DIR
+nix fmt
+popd
+
 echo "Committing changes..."
 git -C $NIXPKGS_DIR add .
 git -C $NIXPKGS_DIR commit -m "various: clean up 'meta = with lib; { ... }'" \
