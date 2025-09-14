@@ -106,6 +106,8 @@ FILES_TO_IGNORE = [
     "pkgs/development/libraries/qt-5/modules/qtwebengine.nix",
     "pkgs/servers/web-apps/wordpress/packages/default.nix",
     "pkgs/by-name/xd/xdgmenumaker/package.nix",
+    "pkgs/applications/networking/cluster/hadoop/containerExecutor.nix",
+    "pkgs/tools/filesystems/ceph/old-python-packages/cryptography.nix",
 
     # other
     "pkgs/development/interpreters/acl2/default.nix",
@@ -217,6 +219,8 @@ FILES_TO_IGNORE = [
     "pkgs/by-name/si/signal-desktop-bin/generic.nix",
     "pkgs/development/compilers/go/binary.nix",
     "pkgs/os-specific/bsd/freebsd/pkgs/drm-kmod-firmware.nix",
+    "pkgs/by-name/io/iozone/package.nix",
+    "pkgs/development/r-modules/default.nix",
 
     # pkgs.lib
     "pkgs/development/python-modules/azure-mgmt-common/default.nix",
