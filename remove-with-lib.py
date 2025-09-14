@@ -214,6 +214,9 @@ FILES_TO_IGNORE = [
     "pkgs/by-name/ya/yazi/plugins/default.nix",
     "pkgs/by-name/ne/netflix/package.nix",
     "pkgs/development/libraries/kde-frameworks/default.nix",
+    "pkgs/by-name/si/signal-desktop-bin/generic.nix",
+    "pkgs/development/compilers/go/binary.nix",
+    "pkgs/os-specific/bsd/freebsd/pkgs/drm-kmod-firmware.nix",
 
     # pkgs.lib
     "pkgs/development/python-modules/azure-mgmt-common/default.nix",
